@@ -27,7 +27,8 @@ conda activate samtools1.22
 
 # extract the gene region
 samtools faidx --threads 15 $genome
-samtools faidx --threads 15 $genome 'cluster2:44986194-45132782' > OPR4_region.fasta
+#samtools faidx --threads 15 $genome 'cluster2:44986194-45132782' > OPR4_region.fasta
+samtools faidx --threads 15 $genome 'cluster2:44976023-45132782' > OPR4_AA_region.fasta
 
 # deactivate software
 conda deactivate
