@@ -29,9 +29,9 @@ conda activate blast
 
 
 # blast albumin protein sequences against consensus sequences
-tblastn -query $wkdir/OPR4/OPR4_protein.fasta \
+tblastn -query $wkdir/OPR4/OPR4_AA_protein.fasta \
         -subject $wkdir/flye_1/assembly_ragtag/ragtag.scaffold_chrs_only.fasta \
-        -out $wkdir/OPR4/OPR4_tblastn.out \
+        -out $wkdir/OPR4/OPR4_AA_tblastn.out \
         -outfmt 6 \
         -evalue 1e-10 \
         -num_threads 4
