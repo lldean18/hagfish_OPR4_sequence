@@ -16,7 +16,7 @@
 
 # set variables
 wkdir=/gpfs01/home/mbzlld/data/hagfish/OPR4
-annotation=$wkdir/OPR4_region_exonerate.out
+annotation=$wkdir/OPR4_AA_region_exonerate.out
 
 
 cd $wkdir
@@ -31,12 +31,12 @@ grep -P "\texon\t" ${annotation} > ${annotation%.*}_OPR4_exons.gff
 # === get the strand ===
 STRAND=$(awk '{print $7}' ${annotation%.*}_OPR4_exons.gff | uniq)
 # === convert exons to fasta ===
-bedtools getfasta -fi ${annotation%_*}.fasta -bed ${annotation%.*}_OPR4_exons.gff -s -name > ${annotation%.*}_OPR4_exons.fasta
+bedtools getfasta -fi ${annotation%_*}.fasta -bed ${annotation%.*}_OPR4_exons.gff -s -name > ${annotation%.*}_OPR4_AA_exons.fasta
 # === merge exons into single CDS FASTA ===
 # Remove headers, flatten, add new header
-seqkit seq ${annotation%.*}_OPR4_exons.fasta | grep -v ">" | tr -d '\n' > cds.tmp
+seqkit seq ${annotation%.*}_OPR4_AA_exons.fasta | grep -v ">" | tr -d '\n' > cds.tmp
 ID=$(basename $annotation)  # create variable with the individual ID
-ID=${ID%%_*}  # create variable with the individual ID
+ID=${ID%%_*}_AA  # create variable with the individual ID
 echo ">${ID}_cds" > ${annotation%_*}_cds.fasta
 cat cds.tmp >> ${annotation%_*}_cds.fasta
 rm cds.tmp
