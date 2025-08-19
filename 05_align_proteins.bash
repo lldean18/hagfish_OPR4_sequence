@@ -12,4 +12,8 @@
 # intron. I'm going to try re-running with a prediction sequence that contains the first
 # intron. 
 
+# when the input sequence includes the first intron, the protein prediction includes
+# that intron too, but there are some (3) amino acid substitutions in intron 1 and not
+# in any of the others....
+
 
