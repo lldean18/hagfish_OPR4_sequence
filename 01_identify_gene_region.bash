@@ -44,5 +44,8 @@ conda deactivate
 # The second column of the ouput gives the chr name
 # The 9th and 10th columns give the start and end of the match
 # it must be on the forward strand bc the start and end are the right way around
-# full stretch of the best match is 44986194 to 45132782 of cluster2 which spans 146,588 bases
-# will take 10,000 bases extra from each side so 44976194 to 45142782
+# full stretch of the best match for OPR4 is 44986194 to 45132782 of cluster2 which spans 146,588 bases
+# full stretch of the best match for OPR4 AA is 44986023 to 45132782 of cluster2 which spans 146,759 bases
+# will take 10,000 bases extra from each side so 44976023 to 45142782
+
+
