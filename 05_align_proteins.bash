@@ -16,4 +16,6 @@
 # that intron too, but there are some (3) amino acid substitutions in intron 1 and not
 # in any of the others....
 
+# intron 1 is also very far upstream from the other 2 introns. Going to try mapping the raw reads
+# back to the assembly and see what the mapping is like in the coding region of OPR4
 
