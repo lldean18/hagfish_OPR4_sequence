@@ -18,7 +18,8 @@
 
 # set variables
 wkdir=/gpfs01/home/mbzlld/data/hagfish/OPR4
-gene_region=$wkdir/OPR4_region.fasta
+#gene_region=$wkdir/OPR4_region.fasta
+gene_region=$wkdir/OPR4_AA_region.fasta
 
 cd $wkdir
 
@@ -31,7 +32,7 @@ conda activate exonerate
 exonerate --model protein2genome \
           --showtargetgff yes \
           --showalignment no \
-          --query OPR4_protein.fasta \
+          --query OPR4_AA_protein.fasta \
           --target $gene_region > ${gene_region%.*}_exonerate.out
 
 # deactivate software
